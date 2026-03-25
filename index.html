@@ -7,12 +7,20 @@
   <title>v2Board API Docs</title>
   <meta name="description" content="v2Board API 文档（Markdown）" />
 
+  <!-- Self-hosted styles to avoid CDN/theme issues on GitHub Pages -->
   <link rel="stylesheet" href="./vendor/theme.css" />
+  <link rel="stylesheet" href="./vendor/github-markdown.css" />
   <link rel="stylesheet" href="./assets/custom.css" />
 </head>
 <body>
   <div id="app">Loading...</div>
+
   <script>
+    function applyGithubMarkdownClass() {
+      var section = document.querySelector('.markdown-section');
+      if (section) section.classList.add('markdown-body');
+    }
+
     window.$docsify = {
       name: 'v2Board API',
       nameLink: '#/',
@@ -29,7 +37,18 @@
         placeholder: '搜索接口 / 路径 ...',
         noData: '无结果',
         depth: 4
-      }
+      },
+
+      plugins: [
+        function (hook) {
+          hook.mounted(function () {
+            applyGithubMarkdownClass();
+          });
+          hook.doneEach(function () {
+            applyGithubMarkdownClass();
+          });
+        }
+      ]
     };
   </script>
 
