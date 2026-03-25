@@ -2,6 +2,12 @@
 
 > 说明：下表中的 URL **省略公共前缀** `/api/v1`（实际请求时请补上）。
 
+## 在线浏览
+
+- 仓库已包含 `index.html`（Docsify），可用于 GitHub Pages 直接浏览。
+- 启用方式：GitHub 仓库 Settings → Pages → Deploy from a branch → `main` / `/(root)`。
+- 本文档索引中所有链接均省略公共前缀 `/api/v1`，实际请求请自行补全。
+
 ### passport
 
 | URL | 请求 | 描述 |
